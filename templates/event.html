@@ -1,0 +1,14 @@
+<script id="item-template" type="x-tmpl-mustache">
+    {{#events}}
+    <div class="box">
+        <div class="content">
+            <h3 class="title">{{title}}</h3>
+            <p class="description">{{description}}</p>
+        </div>
+        <div class="controls bottom">
+            <a href="#" onclick="openRegistrationForm({{id}});">Register</a>
+            <a href="#" onclick="viewParticipantsForm({{id}},'{{title}}');">View</a>
+        </div>
+    </div>
+    {{/events}}
+</script>

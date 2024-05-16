@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/mustache.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Events</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Events</h1>
+    </header>
+    
+    <div id="events" class="grid-init grid">
+
+    </div>
+
+    <div class="pagination">
+        <a href="#">←</a>
+        <a href="#">1</a>
+        <a href="#">...</a>
+        <a href="#">5</a>
+        <a href="#">→</a>
+    </div>
+
+    <!-- Registration modals -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="hidden" id="eventId">
+                        <label for="fullName">Full name</label>
+                        <input type="email" class="form-control" id="fullName">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="dateBirth">Date of birth</label>
+                        <input type="date" class="form-control" id="dateBirth">
+                    </div><br>
+                    <label>Where did you hear about this event?</label><br>
+                    <div class="form-check">
+                        
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="source" id="socials" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Social media</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="source" id="friends" value="2">
+                            <label class="form-check-label" for="inlineRadio2">Friends</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="source" id="myself" value="3">
+                            <label class="form-check-label" for="inlineRadio3">Found myself</label>
+                          </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="closeRegistrationForm();">Close</button>
+              <button type="button" class="btn btn-primary" onclick="submitRegistration();">Registration</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- participant modals -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="event-participants"></h5>
+            </div>
+            <div class="modal-body">
+                <div id="participants" class="grid-init grid">
+                    <div class="box">
+                        <h3 class="title">Title</h3>
+                        <p>description</p>
+                    </div>
+            
+                    <div class="box">
+                        <h3 class="title">Title</h3>
+                        <p>description</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="closePartisipantsForm();">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
